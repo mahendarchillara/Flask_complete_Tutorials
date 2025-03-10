@@ -1,0 +1,89 @@
+<html>
+<body>
+<h2>HTML Forms</h2> 
+<form action="/submit_latest" method='post'> 
+<label for="Science">Science: </label><br> 
+<input type="text" id="science" name="science" value="0"><br> 
+<label for="Maths">Maths: </label><br>
+ <input type="text" id="maths" name="maths" value="0"><br><br> 
+<label for="C ">C:</label><br> 
+<input type="text" id="c" name="c" value="0"><br><br> <label for="datascience">Data Science:</label><br> 
+<input type="text" id="datascience" name="datascience" value="0"><br><br> 
+<input type="submit" value="Submit"> 
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/submit". </p>
+29 </html> 
+</body> 
+</html>
+
+
+<!--================================================================================
+<!-- code explaination:
+ 
+<!--'''🔥 Structure of the form:
+<html>
+<body>
+<h2>HTML Forms</h2>
+<html>: The root element that wraps the entire HTML document.
+<body>: Contains all the content visible to the user, like text, headings, and forms.
+<h2>: A level 2 heading for the form's title — "HTML Forms".
+
+📑 Form setup:
+
+<form action="/submit_latest" method='post'>
+<form>: The form element collects user input.
+action="/submit_latest": Specifies the URL where the form data
+will be sent when submitted. In this case, the data is sent to
+the Flask route /submit_latest.
+method='post': Defines the HTTP method used — POST is used for
+sending data securely (usually for creating or updating data).
+
+📊 Input fields:
+Each field collects user input and sends it with a corresponding name attribute.
+
+<label for="Science">Science: </label><br>
+<input type="text" id="science" name="science" value="0"><br>
+<label>: Provides a text description for each input field.
+for="Science" links the label to the input field (though the id
+should ideally match — here, it should be for="science").
+<input>:
+type="text": Creates a text box for input.
+id="science": A unique identifier for the field (useful for JavaScript or styling).
+name="science": The key name that Flask will use to access 
+the input (request.form['science']).
+value="0": Pre-fills the box with a default value of 0.
+<br>: Line break to add spacing between fields.
+Similar patterns repeat for Maths, C, and Data Science fields:
+
+<label for="Maths">Maths: </label><br>
+<input type="text" id="maths" name="maths" value="0"><br><br>
+
+<label for="C ">C:</label><br>
+<input type="text" id="c" name="c" value="0"><br><br>
+
+<label for="datascience">Data Science:</label><br>
+<input type="text" id="datascience" name="datascience" value="0"><br><br>
+
+🚀 Submit button:
+<input type="submit" value="Submit">
+type="submit": Makes the button submit the form data.
+value="Submit": The text shown on the button.
+
+📢 Extra text:
+<p>If you click the "Submit" button, the form-data will be 
+sent to a page called "/submit". </p>
+A simple paragraph explaining what happens when the form is submitted.
+
+🏁 Closing tags:
+
+</body>
+</html>
+Properly closes the HTML document.
+
+✨ How it works with Flask:
+When the user fills in their scores and clicks Submit:
+
+The form sends the data to /submit_latest.
+Flask handles this data using the submit_latest() function.
+The scores are processed, and the user is redirected based on their average score.'''
